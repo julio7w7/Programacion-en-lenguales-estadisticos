@@ -1,0 +1,172 @@
+#DATOS DE PROYECTO
+
+
+#promedio y desviacion estandar de precios internos entre los meses del año 2020 - 2021
+#Organizacion de datos
+import pandas as pd
+
+#Año 2020
+ene20 = ['Enero', 886161]
+feb20 = ['Febrero', 909103]
+mar20 = ['Marzo', 1143194]
+abr20 = ['Abril', 1175567]
+may20 = ['Mayo', 1068871]
+jun20 = ['Junio', 962800]
+jul20 = ['Julio', 1001452]
+ago20 = ['Agosto', 1143968]
+sep20 = ['Septiembre', 1142233]
+oct20 = ['Octubre', 1052484]
+nov20 = ['Noviembre', 1044700]
+dic20 = ['Diciembre', 1047677]
+
+Datos2020 = [ene20, feb20, mar20, abr20, may20, jun20, jul20, ago20, sep20, oct20, nov20, dic20]
+
+#Año 2021
+ene21 = ['Enero', 1073194]
+feb21 = ['Febrero', 1113536]
+mar21 = ['Marzo', 1156032]
+abr21 = ['Abril', 1207433]
+may21 = ['Mayo', 1385935]
+jun21 = ['Junio', 1420800]
+jul21 = ['Julio', 1562742]
+ago21 = ['Agosto', 1704806]
+sep21 = ['Septiembre', 1712138]
+oct21 = ['Octubre', 1784935]
+nov21 = ['Noviembre', 1999655]
+dic21 = ['Diciembre', 2116484]
+
+Datos2021 = [ene21, feb21, mar21, abr21, may21, jun21, jul21, ago21, sep21, oct21, nov21, dic21]
+
+#Creacion de DataFrames
+df20 = pd.DataFrame(Datos2020, columns = ['Mes','Precio interno'])
+print (df20)
+
+df21 = pd.DataFrame(Datos2021, columns = ['Mes','Precio interno'])
+print (df21)
+
+#Creacion de funciones de promedio y desviacion estandar
+mean20 = df20['Precio interno'].mean()
+mean21 = df21['Precio interno'].mean()
+
+std20 = df20['Precio interno'].std()
+std21 = df21['Precio interno'].std()
+
+
+print ("El promedio de Precio interno mensual del año 2020 es:", mean20, "Y su desviasion estandar es:", std20)
+
+
+
+
+#...............................................................................................................
+
+
+#variacion de precios entre los años  1990 - 2021
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = [1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011,2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]
+y = [427905, 408600, 310500, 345689,707760,730935,591660,905129,657990,536040,460305,319545,289755, 294570,364860, 521820,525645,565290,650565,794655, 1010655,1279395,914355,667935,886815,685710,724140,687060,617175,599355,712125,981765]
+
+plt.xlabel("Años")
+plt.ylabel("Pesos")
+plt.plot(x,y,  "blue")
+
+plt.show()
+
+#mismo punto pero es una tabla, un dataframe..............................................
+import pandas as pd
+
+mi_df = pd.DataFrame(data={"Años": ["1990", "1991", "1992", "1993", "1994", "1995", "1996", "1997", "1998", "1999", "2000",
+                                    "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011",
+                                    "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"],
+                           "Precio externo (Por Dolar)": ["95.09", "90.80" ,"69.00" ,"76.82","157.28","162.43", "131.48",
+                                                          "201.14", "146.22", "119.12", "102.29", "71.01", "64.39", "65.46",
+                                                          "81.08", "115.96", "116.81", "125.62", "144.57","176.59", "224.59",
+                                                          "284.31", "203.19", "148.43", "197.07", "152.38", "160.92", "152.68",
+                                                          "137.15", "133.19", "158.25", "218.17"],
+                           "Precio externo (Peso Colombiano)": ["427.905","408.600","310.500","345.689","707.760","730.935","591.660",
+                                                                 "905.129","657.990","536.040","460.305","319.545","289.755","294.570",
+                                                                 "364.860","521.820","525.645","565.290","650.565","794.655",
+                                                                 "1.010.655","1.279.395","914.355","667.935","886.815","685.710","724.140",
+                                                                 "687.060","617.175","599.355","712.125","981.765"]
+                           })
+                           
+mi_df
+
+#.......................................................................................................................
+
+
+#grafica del valor de las areas cultivadas del año 2020
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = ["Antioquia","Arauca","Bolivar","Boyaca","Caldas","Caquetá","Casanare","Cauca","Cesar","Chocó","Cundinamarca","Huila",
+     "La Guajira","Magdalena","Meta","Nariño","N. Santander","Putumayo","Quindio","Risaralda","Santander","Tolima","Valle","TOTAL"] 
+
+y = [528885, 495, 6300, 45630, 273690, 17100, 11430, 413730, 107505, 810, 133695, 649395, 18990, 80865, 12600, 160920,
+     103950, 945, 88425, 200115, 234045, 481455, 230355, 3801330] 
+
+plt.xlabel("Departamentos")
+plt.ylabel("Valor de Areas cultivadas")
+plt.plot(x,y, "blue")
+plt.title("Año 2020")
+
+plt.show()
+
+#grafica del valor de las areas cultivadas del año 2021
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = ["Antioquia","Arauca","Bolivar","Boyaca","Caldas","Caquetá","Casanare","Cauca","Cesar","Chocó","Cundinamarca","Huila",
+     "La Guajira","Magdalena","Meta","Nariño","N. Santander","Putumayo","Quindio","Risaralda","Santander","Tolima","Valle","TOTAL"] 
+
+y = [523305, 495, 6300, 46080, 266760, 16785, 11115, 418500, 103455, 810, 133380, 648540, 17325, 79470, 12915, 159705,
+     103005, 945,  84915, 195255, 238635, 481635, 231210, 3780495] 
+
+plt.xlabel("Departamentos")
+plt.ylabel("Valor de Areas cultivadas")
+plt.plot(x,y, "blue")
+plt.title("Año 2021")
+
+plt.show()
+
+#tabla dataframe que contiene la informacion entre estos años (2020 - 2021)
+
+import pandas as pd
+
+mi_df = pd.DataFrame(data={"Departamentos": ["Antioquia","Arauca","Bolivar","Boyaca","Caldas","Caquetá","Casanare","Cauca","Cesar","Chocó","Cundinamarca","Huila",
+                                             "La Guajira","Magdalena","Meta","Nariño","N. Santander","Putumayo","Quindio","Risaralda","Santander","Tolima","Valle","TOTAL"],                  
+                        
+                           "Año 2020": ["528.885", "495", "6.300", "45.630", "273.690", "17.100", "11.430", "413.730", "107.505", "810", "133.695", "649.395", "18.990",
+                                        "80.865", "12.600", "160.920","103.950", "945", "88.425", "200.115", "234.045", "481.455", "230.355", "3.801.330"],
+                           
+                           "Año 2021": ["523.305", "495", "6.300", "46.080", "266.760", "16.785", "11.115", "418.500", "103.455", "810", "133.380", "648.540", "17.325",
+                                        "7.9470", "12.915","159.705","103.005", "945", "84.915", "195.255", "238.635", "481.635", "231.210", "3.780.495"]
+                           })
+                           
+mi_df
+
+#.......................................................................................................................
+
+
+#promedio en las exportaciones entre los años 2019 - 2020 - 2021
+import numpy 
+a = [13.668,12.527,12.439]
+a = numpy.mean(a)
+print(a)
+
+#.......................................................................................................................
+
+Para imprimir los códigos trabajados durante esta investigación no es complicado, ya que tomamos los datos manualmente directo de la federacion de cafeteros,
+en estos datos encontramos los datos de ingresos en valor de dolar el cual se hizo una conversion a pesos con el siguiente codigo.
+
+"""
+dolar= float(input("DOLAR: "))
+conversion= dolar*4500
+print(int(conversion))
+"""
+
+una vez tomados todos los datos necesarios se ejecuto el programa, el cual no deberia contar con ningun error de ejecucion.
